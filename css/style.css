@@ -3,15 +3,18 @@
   --primary-color: #ff6b81;
   --primary-light: #ffccd5;
   --primary-dark: #e84a5f;
-  --text-color: #333;
-  --text-light: #666;
+  --text-color: #4a4a4a;
+  --text-light: #8a8a8a;
   --bg-color: #fff;
   --bg-light: #f9f9f9;
   --bg-accent: #fff0f3;
   --border-color: #eee;
   --border-accent: #ffccd5;
   --link-hover: #ff4757;
-  --font-main: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-main: 'HarmonyOS Sans SC', 'PingFang SC', sans-serif;
+  --font-title: 'LXGW WenKai', 'Noto Serif SC', serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-cute: 'MiSans', 'HarmonyOS Sans SC', sans-serif;
   --shadow: 0 5px 15px rgba(0,0,0,0.05);
   --transition: all 0.3s ease;
 }
@@ -29,21 +32,41 @@ body {
   background-color: var(--bg-color);
   font-size: 16px;
   letter-spacing: 0.3px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: var(--primary-color);
   text-decoration: none;
-  transition: var(--transition);
   position: relative;
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var(--primary-dark);
 }
 
-h1, h2, h3, h4, h5 {
+a:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-light);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
   font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--primary-dark);
   line-height: 1.4;
   margin-bottom: 1rem;
 }
@@ -234,6 +257,8 @@ p {
 }
 
 .post-content {
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
   line-height: 1.9;
 }
 
@@ -244,19 +269,18 @@ p {
 }
 
 .post-tags a {
-  display: inline-block;
-  margin-right: 8px;
-  padding: 4px 12px;
-  background: var(--bg-light);
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: var(--text-light);
-  transition: var(--transition);
+  font-family: var(--font-cute);
+  font-size: 0.9rem;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 2px 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .post-tags a:hover {
-  background: var(--primary-light);
-  color: var(--primary-dark);
+  background: var(--primary-color);
+  color: white;
   transform: translateY(-2px);
 }
 
@@ -435,4 +459,15 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 代码块字体 */
+pre, code {
+  font-family: var(--font-code);
+}
+
+/* 特殊文本样式 */
+.cute-text {
+  font-family: var(--font-cute);
+  color: var(--primary-color);
 } 
