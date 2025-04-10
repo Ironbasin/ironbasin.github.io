@@ -11,8 +11,8 @@
   --border-color: #eee;
   --border-accent: #ffccd5;
   --link-hover: #ff4757;
-  --font-main: 'HarmonyOS Sans SC', 'PingFang SC', sans-serif;
-  --font-title: 'LXGW WenKai', 'Noto Serif SC', serif;
+  --font-main: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-title: 'LXGW WenKai', 'Noto Serif SC', 'SimSun', serif;
   --font-code: 'JetBrains Mono', 'Fira Code', monospace;
   --font-cute: 'MiSans', 'HarmonyOS Sans SC', sans-serif;
   --shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -34,6 +34,7 @@ body {
   letter-spacing: 0.3px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  font-display: swap;
 }
 
 a {
